@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit]
+  before_action :authenticate, only: [:create, :new, :edit, :update]
+  # skip_before_filter :authenticate!, only: [:show]
 
   def index
     @projects = Project.all
@@ -40,4 +42,5 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:name, :email, :password)
   end
+
 end
