@@ -1,4 +1,6 @@
 class AdminsController < ApplicationController
+  before_action :set_user, only: [:show, :edit]
+
   def index
 
   end
@@ -9,7 +11,7 @@ class AdminsController < ApplicationController
 
   def create
     @admin = Admin.new(admin_params)
-    if @pet.save
+    if @admin.save
       redirect_to admin_path
     else
       render :new
@@ -32,6 +34,6 @@ class AdminsController < ApplicationController
 
   private
   def admin_params
-    params.require(:admin).permit(:name, :password, :password_confirmation)
+    params.require(:admin).permit(:name, :email, :password)
   end
 end
