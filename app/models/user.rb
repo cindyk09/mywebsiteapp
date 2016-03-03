@@ -1,4 +1,4 @@
-class Admin < ActiveRecord::Base
+class User < ActiveRecord::Base
   has_secure_password
   has_many :projects
 
@@ -6,7 +6,7 @@ class Admin < ActiveRecord::Base
   validates_presence_of :name
 
   def self.authenticate!(email, password)
-    admin = self.find_by(:email => email)
-    admin.authenticate(password) if admin
+    user = self.find_by(:email => email)
+    user.authenticate(password) if user
   end
 end
