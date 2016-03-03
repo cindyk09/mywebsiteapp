@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   def index
-    @admins = admin
+
   end
 
   def new
