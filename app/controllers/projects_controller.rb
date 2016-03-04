@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit]
-  before_action :authenticate, only: [:create, :new, :edit, :update]
-  # skip_before_filter :authenticate!, only: [:show]
+  before_action :set_project, only: [:new, :edit, :show, :update]
+  before_action :authenticate, only: [:new, :edit, :create, :update]
+
+
 
   def index
     @projects = Project.all
