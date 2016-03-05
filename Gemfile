@@ -32,6 +32,7 @@ gem 'pry'
 # boostrap styling
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem "font-awesome-rails"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
