@@ -29,8 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 #binding.pry
 gem 'pry'
 
-# boostrap styling
-gem 'bootstrap-sass', '~> 3.2.0'
+# boostrap styling\
+
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
 gem "font-awesome-rails"
 
