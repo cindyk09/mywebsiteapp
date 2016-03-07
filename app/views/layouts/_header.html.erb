@@ -20,7 +20,7 @@
 
           <li><%= link_to "About" %></li>
           <li><%= link_to "Portfolio", projects_path %></li>
-          <li><%= link_to "Blog", "https://medium.com/@cindyk09", target: "blank" %></li>
+          <li><%= link_to "Blog", "https://medium.com/@cindyk09", target: "_blank" %></li>
           <li><%= link_to "Contact" %></a></li>
             <% if logged_in? %>
               <li><%= link_to "Dash Board", user_path(current_user) %></li>
