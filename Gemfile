@@ -30,8 +30,16 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 
 # boostrap styling
-gem 'bootstrap-sass', '~> 3.2.0'
+
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
+gem "font-awesome-rails"
+
+#Images
+gem "paperclip", "~> 4.2"
+gem 'aws-sdk', '< 2.0'
+
+gem 'figaro'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
