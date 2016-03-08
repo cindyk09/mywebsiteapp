@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :contact, only:[:index]
+  resources :about, only:[:index]
+
   root "home#index"
   resources :projects
   resources :users
