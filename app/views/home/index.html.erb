@@ -46,10 +46,10 @@
 
 					<% @projects.each do |project| %>
 		      <!-- PORTFOLIO ITEM -->
-		      <li class="work-item <%=project.tags%> col-md-3 col-lg-3">
-		        <a href="portfolio-single-1.html">
+		      <li class="work-item <%=project.tags%> col-md-3 col-lg-3" style="padding-bottom:30px;">
+		        <%= link_to project_path(project) do %>
 		          <div class="work-image">
-		              <%= image_tag project.image_upload.url %>
+		              <%= image_tag project.image_upload.url(:medium) %>
 
 		          </div>
 		          <div class="work-caption">
@@ -58,7 +58,7 @@
 		              <%=project.description  %>
 		            </div>
 		          </div>
-		        </a>
+		        <% end %>
 		      </li>
 		      <!-- /PORTFOLIO ITEM -->
 					<% end %>
