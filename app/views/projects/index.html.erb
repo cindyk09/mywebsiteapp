@@ -2,7 +2,7 @@
 <div class="wrapper">
 
   <!-- HOME -->
-  <section class="module module-header bg-dark bg-dark-50" data-background="assets/images/section-7.jpg">
+  <section class="module module-header bg-dark bg-dark-50" data-background=<%= asset_path "deskcomputer2.jpg"%>
 
     <div class="container">
 
@@ -27,7 +27,7 @@
   </section >
   <!-- /HOME -->
 
-  <!-- BLOG GRID -->
+  <!-- Project GRID -->
   <section class="module p-b-0">
 
     <div class="container">
@@ -35,135 +35,28 @@
       <div class="row multi-columns-row post-columns">
 
         <!-- POST ITEM -->
+        <% @projects.each do |project| %>
         <div class="col-sm-6 col-md-4 col-lg-4">
           <div class="post">
+            <%= link_to project_path(project) do %>
             <div class="post-thumbnail">
-              <a href="blog-single.html"><img src="assets/images/post-1.jpg" alt=""></a>
+              <%= image_tag project.image_upload.url(:medium) %>
             </div>
             <div class="post-header">
-              <h2 class="post-title font-alt"><a href="blog-single.html">Our trip to the Alps</a></h2>
-              <div class="post-meta font-inc">
-                By <a href="#">Thomas Anderson</a> | 31 DEC 2014
-              </div>
+              <h2 class="post-title font-alt"><%=project.name%></a></h2>
             </div>
             <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+              <p>Description: <%= project.description%></p>
+              <p>Github: <%= project.github%></p>
+              <p>Project URL: <%= project.projecturl%></p>
             </div>
             <div class="post-more font-inc">
               <a href="blog-single.html" class="more-link">Read more</a>
             </div>
+            <% end %>
           </div>
         </div>
-        <!-- /POST ITEM -->
-
-        <!-- POST ITEM -->
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post">
-            <div class="post-thumbnail">
-              <a href="blog-single.html"><img src="assets/images/post-2.jpg" alt=""></a>
-            </div>
-            <div class="post-header">
-              <h2 class="post-title font-alt"><a href="blog-single.html">Shore after the tide</a></h2>
-              <div class="post-meta font-inc">
-                By <a href="#">Mark Stone</a> | 25 DEC 2014
-              </div>
-            </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            </div>
-            <div class="post-more font-inc">
-              <a href="blog-single.html" class="more-link">Read more</a>
-            </div>
-          </div>
-        </div>
-        <!-- /POST ITEM -->
-
-        <!-- POST ITEM -->
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post">
-            <div class="post-thumbnail">
-              <a href="blog-single.html"><img src="assets/images/post-3.jpg" alt=""></a>
-            </div>
-            <div class="post-header">
-              <h2 class="post-title font-alt"><a href="blog-single.html">We in New Zealand</a></h2>
-              <div class="post-meta font-inc">
-                By <a href="#">Thomas Anderson</a> | 22 DEC 2014
-              </div>
-            </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            </div>
-            <div class="post-more font-inc">
-              <a href="blog-single.html" class="more-link">Read more</a>
-            </div>
-          </div>
-        </div>
-        <!-- /POST ITEM -->
-
-        <!-- POST ITEM -->
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post">
-            <div class="post-thumbnail">
-              <a href="blog-single.html"><img src="assets/images/post-4.jpg" alt=""></a>
-            </div>
-            <div class="post-header">
-              <h2 class="post-title font-alt"><a href="blog-single.html">Our trip to the Alps</a></h2>
-              <div class="post-meta font-inc">
-                By <a href="#">Thomas Anderson</a> | 31 DEC 2014
-              </div>
-            </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            </div>
-            <div class="post-more font-inc">
-              <a href="blog-single.html" class="more-link">Read more</a>
-            </div>
-          </div>
-        </div>
-        <!-- /POST ITEM -->
-
-        <!-- POST ITEM -->
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post">
-            <div class="post-thumbnail">
-              <a href="blog-single.html"><img src="assets/images/post-5.jpg" alt=""></a>
-            </div>
-            <div class="post-header">
-              <h2 class="post-title font-alt"><a href="blog-single.html">Shore after the tide</a></h2>
-              <div class="post-meta font-inc">
-                By <a href="#">Mark Stone</a> | 25 DEC 2014
-              </div>
-            </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            </div>
-            <div class="post-more font-inc">
-              <a href="blog-single.html" class="more-link">Read more</a>
-            </div>
-          </div>
-        </div>
-        <!-- /POST ITEM -->
-
-        <!-- POST ITEM -->
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="post">
-            <div class="post-thumbnail">
-              <a href="blog-single.html"><img src="assets/images/post-6.jpg" alt=""></a>
-            </div>
-            <div class="post-header">
-              <h2 class="post-title font-alt"><a href="blog-single.html">We in New Zealand</a></h2>
-              <div class="post-meta font-inc">
-                By <a href="#">Thomas Anderson</a> | 22 DEC 2014
-              </div>
-            </div>
-            <div class="post-entry">
-              <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            </div>
-            <div class="post-more font-inc">
-              <a href="blog-single.html" class="more-link">Read more</a>
-            </div>
-          </div>
-        </div>
+        <% end %>
         <!-- /POST ITEM -->
 
       </div>
@@ -171,7 +64,7 @@
     </div>
 
   </section>
-  <!-- /BLOG GRID -->
+  <!-- /Project GRID -->
 
   <!-- PAGINATION -->
   <section class="module-small p-t-10">
