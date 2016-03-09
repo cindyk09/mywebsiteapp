@@ -11,7 +11,9 @@
         <div class="col-sm-8 col-sm-offset-2">
 
           <!-- POST -->
-          <div class="post">
+          <%= link_to "Github", @project.github, class:"btn btn-g btn-round", target: '_blank' %>
+          <%= link_to "Demo", @project.projecturl, class:"btn btn-g btn-round", target: '_blank' %>
+          <div >
 
             <div class="post-thumbnail">
               <%= image_tag @project.image_upload.url (:large)%>
@@ -20,8 +22,7 @@
             <div class="post-header align-center">
               <h1 class="post-title font-alt"><%=@project.name %></h1>
               <div class="post-meta font-inc">
-                <ul>Github URL: <%=link_to @project.github %></ul>
-                <ul>Project URL: <%=@project.projecturl%></ul>
+
               </div>
             </div>
 
@@ -29,8 +30,9 @@
               <ul>Description: <%=@project.description %></ul>
             </div>
 
-          </div>
+        </div>
           <!-- /POST -->
+
 
           <br><%= link_to 'Edit Project', edit_project_path %>
           <br><%= link_to 'Back To All Projects', projects_path %>
