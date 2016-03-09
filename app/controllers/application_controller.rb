@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  helper_method :current_user, :logged_in?, :current_uri
+  helper_method :current_user, :logged_in?, :current_uri, :logged_in_and_admin
 
   # def current_uri(@project)
   #   request.env['PATH_INFO'] != '/projects/:id'
@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !!current_user
+  end
+
+  def logged_in_and_admin
+    logged_in? && current_user.admin
   end
 
   private

@@ -10,10 +10,9 @@
 
         <div class="col-sm-8 col-sm-offset-2">
 
-          <!-- POST -->
-          <%= link_to "Github", @project.github, class:"btn btn-g btn-round", target: '_blank' %>
-          <%= link_to "Demo", @project.projecturl, class:"btn btn-g btn-round", target: '_blank' %>
-          <div >
+          <!-- PROJECT DESCRIPTION -->
+
+          <div class="post">
 
             <div class="post-thumbnail">
               <%= image_tag @project.image_upload.url (:large)%>
@@ -21,6 +20,9 @@
 
             <div class="post-header align-center">
               <h1 class="post-title font-alt"><%=@project.name %></h1>
+              <br>
+              <%= link_to "Github", @project.github, class:"btn btn-g btn-round btn-xs", target: '_blank' %>
+              <%= link_to "Demo", @project.projecturl, class:"btn btn-g btn-round btn-xs", target: '_blank' %>
               <div class="post-meta font-inc">
 
               </div>
@@ -30,15 +32,24 @@
               <ul>Description: <%=@project.description %></ul>
             </div>
 
+            <!-- USER CRUD -->
+            <div class="crud align-right">
+              <%= link_to 'Edit', edit_project_path, class: "btn btn-warning btn-round btn-xs"%>
+              <% if logged_in_and_admin %>
+              <%= link_to "Delete", @project, :method => :delete, class: "btn btn-danger btn-round btn-xs"  %>
+              <% end %>
+
+            </div>
+            <!-- USER CRUD -->
         </div>
-          <!-- /POST -->
 
+          <!-- /PROJECT DESCRIPTION -->
 
-          <br><%= link_to 'Edit Project', edit_project_path %>
-          <br><%= link_to 'Back To All Projects', projects_path %>
-          <% if current_user.admin %>
-          <br><%= button_to "Delete", @porject, :method => :delete %>
-          <% end %>
+        </div>
 
-</div>
+      </div>
+
+    </div>
+
+  </section>
 <!-- /WRAPPER -->
