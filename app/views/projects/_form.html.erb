@@ -1,41 +1,45 @@
-<div class="container">
+<!-- FORM -->
+
+
+<div class="row">
+
 
   <%= form_for @project do |f| %>
 
-  <div class="field">
-    <%= f.label :name, "Project Name" %>
-    <%= f.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= f.label :description, "Project Description" %>
-    <%= f.text_area :description %>
-  </div>
+  <div class="col-sm-4 col-sm-offset-4">
 
-  <div class="field">
-    <%= f.label :github, "Github URL" %>
-    <%= f.text_field :github %>
-  </div>
+      <div class="form-group">
+          <%= f.text_field :name, class:"form-control", id:"name", placeholder:"Name"  %>
+      </div>
 
-  <div class="field">
-    <%= f.label :projecturl, "Project URL" %>
-    <%= f.text_field :projecturl %>
-  </div>
+      <div class="form-group">
+          <%= f.text_area :description, class:"form-control", id:"description", placeholder:"Description", value: "", style: "width:295px; height:200px;" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :tags, "Tags" %>
-    <%= f.text_field :tags %>
-  </div>
+      <div class="form-group">
+          <%= f.text_field :github, class:"form-control", id:"github", placeholder:"Github URL"  %>
+      </div>
 
-  <div class="field">
-    <%= f.label :image_upload, "Upload Image" %>
-    <%= f.file_field :image_upload %>
-  </div>
+      <div class="form-group">
+          <%= f.text_field :projecturl, class:"form-control", id:"projecturl", placeholder:"Project URL"  %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Submit" %>
-  </div>
+      <div class="form-group">
+          <%= f.file_field :image_upload, class:"form-control", id:"image_upload", placeholder:"Image Upload"  %>
+      </div>
 
+      <div class="submit align-right">
+
+        <button type="submit" class="btn btn-d btn-round btn-sm">Submit</button>
+      </div>
+
+    <!-- Ajax response -->
+    <div id="contact-response" class="ajax-response font-alt"></div>
+
+  </div>
   <% end %>
 
-</div>
+  </div>
+
+<!--/ FORM -->
