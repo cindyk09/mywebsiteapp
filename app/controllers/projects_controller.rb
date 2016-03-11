@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
@@ -34,7 +35,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    redirect_to user_path
+    redirect_to user_path(current_user)
   end
 
   private
