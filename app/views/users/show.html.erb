@@ -41,11 +41,13 @@
               </div>
               <div class="content-box-text">
                 <% current_user_projects.each do |project| %>
+                <div id="project<%= project.id%>">
                   <%= link_to project.name, project_path(project) %>
                   <%= link_to 'Edit', edit_project_path, class: "btn btn-warning btn-round btn-xs"%>
                   <% if logged_in_and_admin %>
-                  <%= link_to "Delete", project_path(project), method: :delete %>
+                  <%= link_to "Delete", project_path(project), remote: true, method: :delete, class: "btn btn-danger btn-round btn-xs"%>
                   <% end %><br><br>
+                </div>
                 <% end %>
               </div>
             </div>
