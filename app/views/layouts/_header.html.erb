@@ -24,7 +24,7 @@
             <a herf="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio</a>
               <ul class="dropdown-menu">
                 <%projects.each do |project|  %>
-                  <li id="dropdown-menu eachproject<%=project.id%>">
+                  <li class="eachproject<%=project.id%>">
                     <li><%=link_to project.name, project_path(project) %></li>
                   </li>
                 <% end %>
