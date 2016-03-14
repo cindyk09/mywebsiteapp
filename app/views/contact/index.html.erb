@@ -53,9 +53,9 @@
   				<!-- CONTACT FORM -->
   				<div class="row">
 
-  					<div class="col-sm-6 col-sm-offset-3">
 
-  						<form id="contact-form" role="form" novalidate="">
+            <div class="col-sm-6 col-sm-offset-3">
+              <%= form_tag do |f| %>
 
   							<div class="form-group">
   								<label class="sr-only" for="cname">Name</label>
@@ -76,11 +76,10 @@
 
   							<button type="submit" class="btn btn-round btn-g">Submit</button>
 
-  						</form>
-
   						<!-- Ajax response -->
   						<div id="contact-response" class="ajax-response font-alt"></div>
 
+              <% end %>
   					</div>
 
   				</div>
