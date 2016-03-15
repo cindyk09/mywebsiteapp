@@ -1,7 +1,14 @@
-class ContactMailer < ApplicationMailer
-  default from: "cindyk09website@gmail.com"
+class ContactMailer < ActionMailer::Base
+  default to: 'cindyk09@gmail.com'
 
-  def contact_mailer
-    mail(to: 'cindyk09@gmail.com', subject: 'Hi! - from website')
+  def new_mail(name, email, body)
+
+    @name = name
+    @email = email
+    @body = body
+
+    mail(from: email, subject: "Message From #{@name}")
   end
+
+
 end

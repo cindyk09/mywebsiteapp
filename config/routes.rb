@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :contact, only:[:index, :create]
+  resources :contacts
   resources :about, only:[:index]
 
   root "home#index"
@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   get 'sessions' => 'sessions#new'
   patch 'projects/:id' => 'projects#update'
-  
+
 end
