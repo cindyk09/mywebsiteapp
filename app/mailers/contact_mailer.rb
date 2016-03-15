@@ -1,11 +1,11 @@
-class ContactMailer < ActionMailer::Base
+class ContactMailer < ApplicationMailer
   default to: 'cindyk09@gmail.com'
 
-  def new_mail(name, email, body)
+  def new_mail(name, email, message)
 
     @name = name
     @email = email
-    @body = body
+    @message = message
 
     mail(from: email, subject: "Message From #{@name}")
   end
