@@ -69,6 +69,12 @@
                       <%= f.text_area :body, placeholder: "Message"%>
                     </div>
 
+                    <% if flash[:success] %>
+                      <%= flash[:success] %>
+                      <% else flash[:danger] %>
+                      <%= flash[:danger]%>
+                    <%end%>
+
   							<button type="submit" class="btn btn-round btn-g">Submit</button>
 
 
