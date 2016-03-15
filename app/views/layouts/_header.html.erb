@@ -33,7 +33,7 @@
 
           <li><%= link_to "Blog", "https://medium.com/@cindyk09", target: "_blank" %></li>
 
-          <li><%= link_to "Contact", contacts_path %></a></li>
+          <li><%= link_to "Contact", new_contact_path %></a></li>
 
           <% if logged_in? %>
           <li><%= link_to "Dash Board", user_path(current_user) %></li>
