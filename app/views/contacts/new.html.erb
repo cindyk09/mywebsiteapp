@@ -53,33 +53,28 @@
   				<!-- CONTACT FORM -->
   				<div class="row">
 
-  					<div class="col-sm-6 col-sm-offset-3">
 
-  						<form id="contact-form" role="form" novalidate="">
+            <div class="col-sm-6 col-sm-offset-3">
+              <%= form_for @contact, url: contacts_path do |f| %>
 
-  							<div class="form-group">
-  								<label class="sr-only" for="cname">Name</label>
-  								<input type="text" id="cname" class="form-control" name="cname" placeholder="Name" required="" data-validation-required-message="Please enter your name." aria-invalid="false">
-  								<p class="help-block text-danger"></p>
-  							</div>
+                    <div class="field">
+                      <%= f.text_field :name, placeholder: "Name" %>
+                    </div>
 
-  							<div class="form-group">
-  								<label class="sr-only" for="cemail">Your Email</label>
-  								<input type="email" id="cemail" name="cemail" class="form-control" placeholder="Your E-mail" required="" data-validation-required-message="Please enter your email address.">
-  								<p class="help-block text-danger"></p>
-  							</div>
+                    <div class="field">
+                      <%= f.email_field :email, placeholder: "Email"%>
+                    </div>
 
-  							<div class="form-group">
-  								<textarea class="form-control" id="cmessage" name="cmessage" rows="7" placeholder="Message" required="" data-validation-required-message="Please enter your message."></textarea>
-  								<p class="help-block text-danger"></p>
-  							</div>
+                    <div class="field">
+                      <%= f.text_area :body, placeholder: "Message"%>
+                    </div>
 
   							<button type="submit" class="btn btn-round btn-g">Submit</button>
 
-  						</form>
 
   						<!-- Ajax response -->
   						<div id="contact-response" class="ajax-response font-alt"></div>
+              <% end %>
 
   					</div>
 
