@@ -1,10 +1,6 @@
 class ContactsController < ApplicationController
   skip_before_action :authenticate
 
-  def index
-    @contact = Contact.all
-  end
-
   def new
     @contact = Contact.new
   end
@@ -12,13 +8,8 @@ class ContactsController < ApplicationController
   def create
      @contact = Contact.new(contact_params)
      if @contact.save
-       name = params[:contact][:name]
-       email = params[:contact][:email]
-       message = params[:contact][:message]
-
-       ContactMailer.new_mail(name, email, message).deliver_now
-
-       flash[:success] = "Message sent."
+       ContactMailer.new_mail(contact_params).deliver_now
+       flash[:success] = "Message has been sent."
        redirect_to new_contact_path
      else
        flash[:danger] = "Error occured, message has not been sent."
