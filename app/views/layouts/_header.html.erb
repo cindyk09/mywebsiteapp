@@ -41,8 +41,8 @@
           <li><%= link_to "Logout", logout_path, method: :delete %></li>
           <% end %>
 
-          <% if flash[:notice] %>
-            <%= flash[:notice] %>
+          <% if flash[:loggedout] %>
+            <%= flash[:loggedout] %>
           <%end%>
         </ul>
       </div>
