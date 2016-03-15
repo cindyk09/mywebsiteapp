@@ -42,7 +42,7 @@
   						<h2 class="module-title align-center font-alt">Get in touch</h2>
 
   						<div class="module-subtitle align-center font-inc">
-  							A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+
   						</div>
 
   					</div>
@@ -68,6 +68,12 @@
                     <div class="field">
                       <%= f.text_area :body, placeholder: "Message"%>
                     </div>
+
+                    <% if flash[:success] %>
+                      <%= flash[:success] %>
+                      <% else flash[:danger] %>
+                      <%= flash[:danger]%>
+                    <%end%>
 
   							<button type="submit" class="btn btn-round btn-g">Submit</button>
 
