@@ -2,6 +2,7 @@
 <br>
 <br>
 <br>
+	<h1 class="module-title align-center font-alt">Login</h1>
 
 <div id="flash_messages" class="col-sm-4 col-sm-offset-4 align-center font-alt">
 	<% flash.each do |key, value| %>
@@ -9,7 +10,6 @@
 	<% end %>
 </div>
 
-	<h1 class="module-title align-center font-alt">Login</h1>
 
   <div class="form-group col-sm-4 col-sm-offset-4">
 		<%= form_for @user, url: login_path do |f| %>
