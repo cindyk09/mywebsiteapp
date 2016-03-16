@@ -42,8 +42,12 @@
   						<div class="module-subtitle align-center font-inc">
   							Don't be a stranger.
   						</div>
+          	</div>
 
-  					</div>
+            <!-- ERROR TO APPEND TO -->
+            <div id="contenterror">
+            </div>
+            <!-- /ERROR TO APPEND TO-->
 
   				</div>
   				<!-- /MODULE TITLE -->
@@ -51,12 +55,6 @@
 
   				<!-- CONTACT FORM -->
   				<div id="content" class="row">
-
-            <div id="flash_messages" class="col-sm-4 col-sm-offset-4 align-center font-alt">
-              <% if flash[:danger] %>
-              <%= flash[:danger]%>
-              <%end%>
-            </div>
 
             <div class="col-sm-6 col-sm-offset-3">
               <%= form_for @contact, url: contacts_path, remote: true do |f| %>
