@@ -36,11 +36,10 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { }
+      format.html { user_path(current_user) }
       format.js { }
     end
 
-    # redirect_to user_path(current_user)
 
   end
 

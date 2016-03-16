@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  get 'sessions' => 'sessions#new'
-  patch 'projects/:id' => 'projects#update'
+  get 'dashboard', to: "dashboard#index", as: "dashboard"
 
 end

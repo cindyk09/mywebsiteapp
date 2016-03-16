@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       user = User.authenticate!(params[:user][:email], params[:user][:password])
       if user
         session[:user_id] = user.id
-        redirect_to user_path(user)
+        redirect_to dashboard_path
       else
         flash[:error] = "Bad E-mail or Password"
         redirect_to sessions_path
