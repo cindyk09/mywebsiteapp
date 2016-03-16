@@ -7,10 +7,13 @@ class ContactsController < ApplicationController
 
   def create
      @contact = Contact.new(contact_params)
+
      if @contact.save
        ContactMailer.new_mail(contact_params).deliver_now
-       flash[:success] = "Message has been sent."
-       redirect_to new_contact_path
+       respond_to do |format|
+        format.html {redirect_to new_contact_path }
+        format.js { }
+       end
      else
        flash[:danger] = "Error occured, message has not been sent."
        redirect_to new_contact_path
