@@ -15,8 +15,10 @@ class ContactsController < ApplicationController
         format.js { }
        end
      else
-       flash[:danger] = "Error occured, message has not been sent."
-       redirect_to new_contact_path
+       respond_to do |format|
+        format.html {redirect_to new_contact_path }
+        format.js { render 'contacts/error.js.erb'}
+     end
      end
    end
 
