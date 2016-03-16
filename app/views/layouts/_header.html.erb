@@ -36,7 +36,7 @@
           <li><%= link_to "Contact", new_contact_path %></a></li>
 
           <% if logged_in? %>
-          <li><%= link_to "Dash Board", user_path(current_user) %></li>
+          <li><%= link_to "Dashboard", dashboard_path %></li>
 
           <li><%= link_to "Logout", logout_path, method: :delete %></li>
           <% end %>

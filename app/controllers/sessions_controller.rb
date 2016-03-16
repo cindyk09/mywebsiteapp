@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         redirect_to dashboard_path
       else
         flash[:error] = "Bad E-mail or Password"
-        redirect_to sessions_path
+        redirect_to login_path
       end
     end
 
