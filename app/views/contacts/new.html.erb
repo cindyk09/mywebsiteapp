@@ -50,18 +50,16 @@
 
 
   				<!-- CONTACT FORM -->
-  				<div class="row">
+  				<div id="content" class="row">
 
             <div id="flash_messages" class="col-sm-4 col-sm-offset-4 align-center font-alt">
-              <% if flash[:success] %>
-              <%= flash[:success] %>
-              <% else flash[:danger] %>
+              <% if flash[:danger] %>
               <%= flash[:danger]%>
               <%end%>
             </div>
 
             <div class="col-sm-6 col-sm-offset-3">
-              <%= form_for @contact, url: contacts_path do |f| %>
+              <%= form_for @contact, url: contacts_path, remote: true do |f| %>
 
                     <div class="form-group">
                       <%= f.text_field :name, class:"form-control", placeholder: "Name" %>
