@@ -29,6 +29,10 @@
           <%= f.file_field :image_upload, class:"form-control", id:"image_upload", placeholder:"Image Upload"  %>
       </div>
 
+      <div class="form-group">
+          <%= f.text_field :tags, class:"form-control", id:"tags", placeholder:"Tags", required: "" %>
+      </div>
+
       <div class="submit align-right">
         <button type="submit" class="btn btn-d btn-round btn-sm">Submit</button>
       </div>
