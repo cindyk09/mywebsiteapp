@@ -60,15 +60,15 @@
               <%= form_for @contact, url: contacts_path, remote: true do |f| %>
 
                     <div class="form-group">
-                      <%= f.text_field :name, class:"form-control", placeholder: "Name" %>
+                      <%= f.text_field :name, class:"form-control", placeholder: "Name", required: "" %>
                     </div>
 
                     <div class="form-group">
-                      <%= f.email_field :email, class:"form-control", placeholder: "Email"%>
+                      <%= f.email_field :email, class:"form-control", placeholder: "Email", required: ""%>
                     </div>
 
                     <div class="form-group">
-                      <%= f.text_area :message, class:"form-control", placeholder: "Message", style: "height:200px;"%>
+                      <%= f.text_area :message, class:"form-control", placeholder: "Message", style: "height:200px;", required: ""%>
                     </div>
 
                 <div class="submit align-right">
