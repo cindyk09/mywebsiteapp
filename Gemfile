@@ -30,6 +30,10 @@ gem 'bcrypt', '~> 3.1.7'
 #binding.pry
 gem 'pry'
 
+#rspec
+gem 'rspec-rails'
+
+
 # boostrap styling
 
 gem 'bootstrap-sass', '~> 3.3.6'
