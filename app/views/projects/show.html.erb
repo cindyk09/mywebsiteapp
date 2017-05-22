@@ -21,8 +21,16 @@
             <div class="post-header align-center">
               <h1 class="post-title font-alt"><%=@project.name %></h1>
               <br>
-              <%= link_to "Github", @project.github, class:"btn btn-g btn-round btn-xs", target: '_blank' %>
-              <%= link_to "Demo", @project.projecturl, class:"btn btn-g btn-round btn-xs", target: '_blank' %>
+              <% if @project.github != "" %>
+                <%= link_to "Github", @project.github, class:"btn btn-g btn-round btn-xs", target: '_blank' %>
+              <%end %>
+              <%if @project.projecturl != "" %>
+                <%= link_to "Demo", @project.projecturl, class:"btn btn-g btn-round btn-xs", target: '_blank' %>
+              <%end %>
+              <div class="post-meta font-inc">
+
+              </div>
+
             </div>
 
             <div class="post-entry font-inc align-center">
