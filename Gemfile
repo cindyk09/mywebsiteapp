@@ -41,7 +41,7 @@ gem 'autoprefixer-rails'
 gem "font-awesome-rails"
 
 #Images
-gem "paperclip", "~> 4.2"
+gem "paperclip", "~> 5.2"
 gem 'aws-sdk', '< 2.0'
 
 gem 'figaro'
